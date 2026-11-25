@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mapa DISC · Izaque · Comportamento Transformado</title>
+<meta name="description" content="Descubra o seu perfil DISC e as emoções por trás dele. Ferramenta de autoconhecimento com resultado na hora.">
+<meta name="theme-color" content="#060D0A">
+<!-- Open Graph: URLs absolutas (Instagram/WhatsApp não leem caminho relativo). Se mudar o domínio, troque https://izaquesoul-alt.github.io/mapa-disc/ em todas as ocorrências. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Comportamento Transformado">
+<meta property="og:title" content="Mapa DISC · Descubra o seu perfil e o que move você">
+<meta property="og:description" content="Seu perfil DISC e as emoções por trás dele. Ferramenta de autoconhecimento, com resultado na hora. Por Izaque.">
+<meta property="og:image" content="https://izaquesoul-alt.github.io/mapa-disc/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mapa DISC, por Izaque">
+<meta property="og:url" content="https://izaquesoul-alt.github.io/mapa-disc/">
+<link rel="canonical" href="https://izaquesoul-alt.github.io/mapa-disc/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mapa DISC · Descubra o seu perfil e o que move você">
+<meta name="twitter:description" content="Seu perfil DISC e as emoções por trás dele, com resultado na hora.">
+<meta name="twitter:image" content="https://izaquesoul-alt.github.io/mapa-disc/og.png">
+<link rel="preload" href="fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/InstrumentSerif-Italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230C3B2E' stroke='%23C9A45C' stroke-width='3'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-style='italic' font-size='32' fill='%23E4C47F'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+
+<!-- 1. Boas-vindas + consentimento -->
+<main id="welcome" class="screen active" aria-labelledby="w-title">
+  <div class="welcome-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">CT</div>
+      <div class="brand-name">Comportamento<br>Transformado</div>
+    </div>
+    <div class="eyebrow">Autoconhecimento gratuito · por Izaque</div>
+    <h1 id="w-title" class="welcome-title">Mapa <em>DISC</em></h1>
+    <p class="welcome-sub">Descubra o seu perfil comportamental DISC e, por baixo dele, as emoções que estão moldando a sua vida.</p>
+    <ul class="perks">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="w-time">Cerca de 5 minutos, em formato de conversa</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg><span>Resultado na hora: seu perfil DISC + emoções</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Suas respostas ficam só no seu aparelho</span></li>
+    </ul>
+    <label class="consent">
+      <input type="checkbox" id="consent">
+      <span>Li e concordo com a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o uso das minhas respostas para gerar o meu resultado (LGPD).</span>
+    </label>
+    <div class="resume" id="start-area">
+      <button class="btn btn-gold btn-block" id="btn-start" disabled>Começar meu mapa</button>
+    </div>
+    <p class="welcome-foot">Ferramenta de autoconhecimento. Não substitui acompanhamento psicológico.</p>
+  </div>
+</main>
+
+<!-- 2. Chat -->
+<section id="chat" class="screen" aria-label="Conversa com Izaque">
+  <header class="chat-head">
+    <div class="head-row">
+      <button class="icon-btn" id="btn-back" aria-label="Voltar uma pergunta" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="avatar" id="avatar" aria-hidden="true">I</div>
+      <div class="who">
+        <div class="who-name">Izaque</div>
+        <div class="who-status" id="status" aria-live="polite">online</div>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-meta"><span id="prog-section">&nbsp;</span><span id="prog-count"></span></div>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><div class="progress-bar" id="progress-bar"></div></div>
+    </div>
+  </header>
+  <div class="log" id="log" aria-live="polite"></div>
+  <div class="composer" id="composer" hidden></div>
+</section>
+
+<!-- 3. Resultado -->
+<main id="result" class="screen" aria-label="Seu resultado"></main>
+
+<script src="data.js?v=6"></script>
+<script src="app.js?v=6"></script>
+</body>
+</html>

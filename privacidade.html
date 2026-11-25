@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de Privacidade · Mapa DISC</title>
+<meta name="theme-color" content="#060D0A">
+<meta name="description" content="Política de Privacidade do Mapa DISC e da automação do Instagram (comentário e direct).">
+<link rel="canonical" href="https://izaquesoul-alt.github.io/mapa-disc/privacidade.html">
+<link rel="stylesheet" href="styles.css?v=6">
+<style>
+  /* fallback mínimo: a página abre legível mesmo sem styles.css */
+  body { margin: 0; background: #060D0A; color: #EEF3EF; font-family: Montserrat, system-ui, Arial, sans-serif; line-height: 1.5; }
+  a { color: #E4C47F; }
+  .policy { max-width: 680px; margin: 0 auto; padding: 36px 22px 60px; }
+  .policy h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 10vw, 56px); line-height: 1; margin: 12px 0 8px; }
+  .policy h2 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 32px 0 6px; color: var(--gold-hi); }
+  .policy p, .policy li { color: var(--muted); font-size: 15px; }
+  .policy li { margin-bottom: 6px; }
+  .policy .upd { font-size: 12px; color: var(--dim); }
+  .policy .back { display: inline-block; margin-bottom: 18px; color: var(--muted); font-size: 14px; }
+  .todo { background: rgba(201,164,92,.12); color: var(--gold-hi); padding: 0 4px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main class="policy">
+  <a class="back" href="index.html">← Voltar ao Mapa DISC</a>
+  <div class="eyebrow">Mapa DISC · LGPD</div>
+  <h1>Política de Privacidade</h1>
+  <p class="upd">Última atualização: 24 de novembro de 2026</p>
+
+  <h2>Quem é o responsável</h2>
+  <p>O Mapa DISC é oferecido por Izaque (série Comportamento Transformado), controlador dos dados nos termos da Lei nº 13.709/2018 (LGPD). Contato: WhatsApp <a href="https://wa.me/5521969013920">(21) 96901-3920</a>.</p>
+
+  <h2>Quais dados usamos</h2>
+  <ul>
+    <li>Seu primeiro nome, para personalizar a conversa e o resultado.</li>
+    <li>Suas respostas às frases do questionário, para calcular o seu mapa.</li>
+    <li>A data e hora em que você deu o consentimento.</li>
+    <li>Se você chegou pelo Instagram: o identificador da sua conta, o texto do comentário e as etapas da conversa no direct (veja <a href="#instagram">Instagram</a>).</li>
+  </ul>
+
+  <h2>Onde os dados ficam</h2>
+  <p>Suas respostas, o seu nome e o seu resultado no Mapa são processados e guardados <b>apenas no seu próprio aparelho</b> (armazenamento local do navegador), para que você possa pausar e continuar depois. Eles não são enviados para nenhum servidor.</p>
+  <p>Se você tocar no botão do WhatsApp, abriremos uma mensagem já escrita com o seu nome e um resumo do seu perfil. Ela só é enviada se você mesma(o) apertar "enviar" no WhatsApp. A partir daí, a conversa segue a política do WhatsApp.</p>
+
+  <h2 id="instagram">Instagram (comentário e direct)</h2>
+  <p>Quando você comenta MAPA em um post e conversa comigo pelo direct, guardamos o identificador da sua conta do Instagram, o texto do comentário e as etapas da conversa (por exemplo, se o link foi enviado). Usamos isso só para te enviar o link do Mapa e para medir quantas pessoas concluem cada etapa. Nada é vendido ou repassado.</p>
+  <p>Os dados ficam em servidor do Supabase e são <b>apagados automaticamente em até 90 dias</b>. Para pedir a exclusão antes, escreva no direct do <a href="https://instagram.com/izaquetrindade_" target="_blank" rel="noopener">@izaquetrindade_</a> ou no WhatsApp <a href="https://wa.me/5521969013920">(21) 96901-3920</a>.</p>
+  <p>Essas informações não incluem as suas respostas ao Mapa, que continuam somente no seu aparelho.</p>
+
+  <h2>Para que usamos</h2>
+  <p>As respostas do Mapa servem exclusivamente para gerar o seu resultado de autoconhecimento e, se você decidir nos chamar, para conversar sobre ele. Os dados do Instagram servem só para enviar o link e medir o funil, como descrito acima. A base legal é o seu consentimento (art. 7º, I, e art. 11, I, da LGPD), já que respostas sobre emoções podem ser dados sensíveis.</p>
+
+  <h2>Seus direitos</h2>
+  <p>Você pode, a qualquer momento, revogar o consentimento e apagar seus dados. Como eles ficam no seu aparelho, basta tocar em "Apagar meus dados deste aparelho" na tela de resultado, ou no botão abaixo. Também pode solicitar confirmação, acesso, correção ou exclusão dos dados do Instagram ou do que tenha nos enviado pelo WhatsApp, pelo direct do @izaquetrindade_ ou pelo WhatsApp (21) 96901-3920.</p>
+  <p><button class="btn btn-ghost" id="erase">Apagar meus dados deste aparelho</button> <span id="erased" style="font-size:13px;color:var(--emerald-hi)"></span></p>
+
+  <h2>Importante</h2>
+  <p>O Mapa DISC é uma <b>ferramenta de autoconhecimento</b>. Não é teste nem avaliação psicológica e não substitui o acompanhamento de psicólogo ou psiquiatra. Em caso de sofrimento intenso, procure um profissional de saúde ou ligue 188 (CVV, gratuito, 24h).</p>
+</main>
+<script>
+document.getElementById("erase").addEventListener("click", function () {
+  try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf("mapaEmocional:") === 0) localStorage.removeItem(k); }); } catch (e) {}
+  document.getElementById("erased").textContent = "Pronto, dados apagados.";
+});
+</script>
+</body>
+</html>
